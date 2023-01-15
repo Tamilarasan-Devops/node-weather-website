@@ -3,6 +3,9 @@ const express = require("express")
 const hbs = require("hbs")
 const geocode = require("./utils/geocode")
 const weather = require("./utils/weather")
+
+const port = process.env.PORT || 3000
+
 const { registerHelper } = require("hbs")
 
 const app = express()
@@ -119,6 +122,6 @@ app.get("*", (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log("Server listening at port 3000...")
+app.listen(port, () => {
+    console.log("Server listening at port " + port)
 })
